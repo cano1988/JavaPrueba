@@ -17,9 +17,9 @@ public class MysqlConfig {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Configurar credenciales
-            String url = "jdbc:mysql://localhost:3306/nombre_base"; //localhost
+            String url = "jdbc:mysql://localhost:3306/RiwiAcademyDB";
             String user = "root";
-            String password = "Rlwl2023."; //Rlwl2023.
+            String password = "Rlwl2023."; //
 
             objConnection = DriverManager.getConnection(url, user, password);
 
@@ -46,6 +46,5 @@ public class MysqlConfig {
             System.out.println("Error: Database failed (close)" + e.getMessage());
         }
     }
-
 
 }
