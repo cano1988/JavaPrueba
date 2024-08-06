@@ -4,7 +4,7 @@ import com.riwiJava.entity.Student;
 
 import java.util.List;
 
-public interface StudentCrudRepository {  //Reemplazar Nombre uno por la entidad
+public interface StudentCrudRepository {
 
     public boolean createStudent(Student student);
 

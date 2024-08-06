@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CourseCrudRepository {
 
-    public boolean Course(Course course);
+    public boolean createCourse(Course course);
 
     public List<Course> findAll();
 

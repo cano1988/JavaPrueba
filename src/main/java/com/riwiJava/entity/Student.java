@@ -5,14 +5,14 @@ public class Student {
     private int id;
     private String name;
     private String email;
-    private String statu;
+    private Boolean statu;
     private String courseSigned;
 
 
     public Student() {
     }
 
-    public Student(int id, String name, String email, String statu, String courseSigned) {
+    public Student(int id, String name, String email, Boolean statu, String courseSigned) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -45,11 +45,11 @@ public class Student {
         this.email = email;
     }
 
-    public String getStatu() {
+    public boolean getStatu() {
         return statu;
     }
 
-    public void setStatu(String statu) {
+    public void setStatu(Boolean statu) {
         this.statu = statu;
     }
 

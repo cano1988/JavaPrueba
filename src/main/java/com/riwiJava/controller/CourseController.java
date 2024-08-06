@@ -1,6 +1,8 @@
 package com.riwiJava.controller;
 
+import com.riwiJava.entity.Course;
 import com.riwiJava.entity.Student;
+import com.riwiJava.model.CourseModel;
 import com.riwiJava.model.StudentModel;
 import com.riwiJava.utils.utils;
 
@@ -14,43 +16,42 @@ public class CourseController {
 
 
     public static void create(){
-        Student student = new Student();
+        Course course= new Course();
 
-        String name = JOptionPane.showInputDialog("Enter name's Student: ");
-        String  email = JOptionPane.showInputDialog("Enter email Student: ");
-        Boolean statu = Boolean.valueOf(JOptionPane.showInputDialog("Enter status Student "));
-        String courseSigned = JOptionPane.showInputDialog("Enter cv (technology that the developer uses): ");
 
-        student.setName(name);
-        student.setEmail(email);
-        student.setStatu(String.valueOf(statu));
-        student.setCourseSigned(courseSigned);
+        String name = JOptionPane.showInputDialog("Enter name course: ");
+        int studentId = Integer.parseInt(JOptionPane.showInputDialog("Enter StudentId:  "));
 
-        instanceModel().createStudent(student);
+        course.setName(name);
+        course.setStudentId(studentId);
+
+        instanceModel().createCourse(course);
+
+
+
 
     }
 
     public static void delete() {
-        instanceModel().deleteStudent(utils.selectOption(instanceModel().findAll()));    }
+        instanceModel().deleteCourse(utils.selectOption(instanceModel().findAll()));    }
 
     public static void update() {
 
-        Student selectedStudent = (Student) utils.selectOption(instanceModel().findAll());
+        Course selectedStudent = (Course) utils.selectOption(instanceModel().findAll());
 
-        selectedStudent.setName(JOptionPane.showInputDialog("Enter name's student: ", selectedStudent.getName()));
-        selectedStudent.setEmail(JOptionPane.showInputDialog("Enter email student: ", selectedStudent.getEmail()));
-        selectedStudent.setStatu(JOptionPane.showInputDialog("Enter status student: ", selectedStudent.getStatu()));
-        selectedStudent.setCourseSigned(JOptionPane.showInputDialog("Enter course student ", selectedStudent.getCourseSigned()));
+        selectedStudent.setName(JOptionPane.showInputDialog("Enter name's Course: ", selectedStudent.getName()));
+        selectedStudent.setStudentId(Integer.parseInt(JOptionPane.showInputDialog("Enter id Student: ", selectedStudent.getStudentId())));
 
 
-        instanceModel().updateStudent(selectedStudent);
+
+        instanceModel().updateCourse(selectedStudent);
     }
 
 
 
     public static void filter() {
-        String field = utils.selectOption(List.of(new String[]{"student.name", "student.email", "student.statu", "student.courseSigned"}));
-        List<Student> filter = instanceModel().getByField(field, JOptionPane.showInputDialog("Search: "));
+        String field = utils.selectOption(List.of(new String[]{"course.name", "course.studentId"}));
+        List<Course> filter = instanceModel().getByField(field, JOptionPane.showInputDialog("Search: "));
 
         String students = "List of Student filter for " + field + " : \n";
 
@@ -74,8 +75,8 @@ public class CourseController {
     }
 
 
-    public static StudentModel instanceModel() {
-        return new StudentModel();
+    public static CourseModel instanceModel() {
+        return new CourseModel();
     }
 
 }

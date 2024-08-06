@@ -17,7 +17,7 @@ public class StudentModel implements StudentCrudRepository {
     public boolean createStudent(Student student) {
 
         Connection objConnection = MysqlConfig.openConnection();
-        Student objstudent = new Student ();
+
 
         boolean result = false;
 
@@ -25,10 +25,10 @@ public class StudentModel implements StudentCrudRepository {
             String slq = "INSERT INTO student(name, email, statu, courseSigned) VALUES (?,?,?,?);";
             PreparedStatement pStatement = objConnection.prepareStatement(slq, Statement.RETURN_GENERATED_KEYS);
 
-            pStatement.setString(1, objstudent.getName());
-            pStatement.setString(2, objstudent.getEmail());
-            pStatement.setString(3, objstudent.getStatu());
-            pStatement.setString(4, objstudent.getCourseSigned());
+            pStatement.setString(1, student.getName());
+            pStatement.setString(2, student.getEmail());
+            pStatement.setBoolean(3, student.getStatu());
+            pStatement.setString(4, student.getCourseSigned());
 
 
             result = pStatement.executeUpdate() > 0;
@@ -57,7 +57,7 @@ public class StudentModel implements StudentCrudRepository {
 
         try {
             //3. Creo la sentencia SQL
-            String sql = "select * from student ; ";
+            String sql = "select * from student";
             //4. Preparo el statement
             PreparedStatement objPrepared = objConnection.prepareStatement(sql);
 
@@ -67,7 +67,7 @@ public class StudentModel implements StudentCrudRepository {
                  Student objStudent = new Student();
                objStudent.setId(objResult.getInt("name"));
                objStudent.setEmail(objResult.getString("email"));
-               objStudent.setStatu(String.valueOf(objResult.getBoolean("statu")));
+               objStudent.setStatu(objResult.getBoolean("statu"));
                objStudent.setCourseSigned(objResult.getString("courseSigned"));
 
                 listStudent.add(objStudent);
@@ -93,10 +93,10 @@ public class StudentModel implements StudentCrudRepository {
             String sql = "UPDATE student SET name = ?, email = ?, statu = ?, courseSigned = ?  WHERE id = ?;";
             PreparedStatement pStatement = objConnection.prepareStatement(sql);
 
-            pStatement.setString(1, objStudent.getName());
-            pStatement.setString(2, objStudent.getEmail());
-            pStatement.setString(3, objStudent.getStatu());
-            pStatement.setString(4, objStudent.getCourseSigned());
+            pStatement.setString(1, student.getName());
+            pStatement.setString(2, student.getEmail());
+            pStatement.setBoolean(3, student.getStatu());
+            pStatement.setString(4, student.getCourseSigned());
 
 
             result = pStatement.executeUpdate() > 0;
@@ -189,7 +189,7 @@ public class StudentModel implements StudentCrudRepository {
                 objCoder.setId(rs.getInt("student.id"));
                 objCoder.setName(rs.getString("student.name"));
                 objCoder.setEmail(rs.getString("student.email"));
-                objCoder.setStatu(String.valueOf(rs.getBoolean("student.statu")));
+                objCoder.setStatu(rs.getBoolean("student.statu"));
                 objCoder.setCourseSigned(rs.getString("student.courseSigned"));
 
 

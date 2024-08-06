@@ -17,13 +17,13 @@ public class StudentController {
         Student student = new Student();
 
         String name = JOptionPane.showInputDialog("Enter name's Student: ");
-        String  email = JOptionPane.showInputDialog("Enter email Student: ");
-        Boolean statu = Boolean.valueOf(JOptionPane.showInputDialog("Enter status Student "));
-        String courseSigned = JOptionPane.showInputDialog("Enter your course assigned): ");
+        String  emails = JOptionPane.showInputDialog("Enter email Student: ");
+        Boolean statu= Boolean.valueOf(JOptionPane.showInputDialog("Enter status Student "));
+        String courseSigned = JOptionPane.showInputDialog("Enter your course assigned: ");
 
         student.setName(name);
-        student.setEmail(email);
-        student.setStatu(String.valueOf(statu));
+        student.setEmail(emails);
+        student.setStatu(statu);
         student.setCourseSigned(courseSigned);
 
         instanceModel().createStudent(student);
@@ -39,7 +39,7 @@ public class StudentController {
 
         selectedStudent.setName(JOptionPane.showInputDialog("Enter name's student: ", selectedStudent.getName()));
         selectedStudent.setEmail(JOptionPane.showInputDialog("Enter email student: ", selectedStudent.getEmail()));
-        selectedStudent.setStatu(JOptionPane.showInputDialog("Enter status student: ", selectedStudent.getStatu()));
+        //selectedStudent.setStatu(JOptionPane.showInputDialog("Enter status student: ", selectedStudent.getStatu()));
         selectedStudent.setCourseSigned(JOptionPane.showInputDialog("Enter course student ", selectedStudent.getCourseSigned()));
 
 

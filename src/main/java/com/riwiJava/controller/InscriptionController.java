@@ -23,7 +23,7 @@ public class InscriptionController {
 
         student.setName(name);
         student.setEmail(email);
-        student.setStatu(String.valueOf(statu));
+        student.setStatu(statu);
         student.setCourseSigned(courseSigned);
 
         instanceModel().createStudent(student);
@@ -39,7 +39,7 @@ public class InscriptionController {
 
         selectedStudent.setName(JOptionPane.showInputDialog("Enter name's student: ", selectedStudent.getName()));
         selectedStudent.setEmail(JOptionPane.showInputDialog("Enter email student: ", selectedStudent.getEmail()));
-        selectedStudent.setStatu(JOptionPane.showInputDialog("Enter status student: ", selectedStudent.getStatu()));
+        //selectedStudent.setStatu(JOptionPane.showInputDialog("Enter status student: ", selectedStudent.getStatu()));
         selectedStudent.setCourseSigned(JOptionPane.showInputDialog("Enter course student ", selectedStudent.getCourseSigned()));
 
 
