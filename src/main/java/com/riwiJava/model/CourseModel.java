@@ -23,7 +23,7 @@ public class CourseModel implements CourseCrudRepository {
             boolean result = false;
 
             try {
-                String slq = "INSERT INTO course(name, studentId) VALUES (?,?,?);";
+                String slq = "INSERT INTO course(name, studentId) VALUES (?,?);";
                 PreparedStatement pStatement = objConnection.prepareStatement(slq, Statement.RETURN_GENERATED_KEYS);
 
                 pStatement.setString(1,course.getName());
