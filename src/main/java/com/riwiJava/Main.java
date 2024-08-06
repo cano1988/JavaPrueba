@@ -1,19 +1,23 @@
 package com.riwiJava;
 
+import com.riwiJava.controller.CourseController;
+import com.riwiJava.controller.InscriptionController;
+import com.riwiJava.controller.ScoreController;
+import com.riwiJava.controller.StudentController;
+
 import javax.swing.*;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
         int optionManager = 0, optionCRUD = 0, optionSearch = 0;
 
         do {
             optionManager = Integer.parseInt(JOptionPane.showInputDialog("""
-            1. Coder Manager
-            2. Company Manager
-            3. Vacancy Manager
-            4. Contract Manager
+            1. Student Manager
+            2. Course Manager
+            3. Inscription Manager
+            4. Score Manager
             5. Exit
             
             Enter your option:
@@ -23,10 +27,10 @@ public class Main {
                 case 1:
                     do {
                         optionCRUD = Integer.parseInt(JOptionPane.showInputDialog("""
-                        1. Create Coder
-                        2. Search Coder
-                        3. Delete Coder
-                        4. Update Coder
+                        1. Create Student
+                        2. Search Student
+                        3. Delete Student
+                        4. Update Student
                         5. Exit
                         
                         Enter your option:
@@ -34,15 +38,15 @@ public class Main {
 
                         switch (optionCRUD) {
                             case 1:
-                                CoderController.create();
+                                StudentController.create();
                                 break;
 
                             case 2:
 
                                 do {
                                     optionSearch = Integer.parseInt(JOptionPane.showInputDialog("""
-                                    1. Show All Coder
-                                    2. Filter Coder
+                                    1. Show All Student
+                                    2. Filter Student
                                     3. Exit
                                     
                                     Enter your option:
@@ -50,22 +54,22 @@ public class Main {
 
                                     switch (optionSearch) {
                                         case 1:
-                                            CoderController.showAll();
+                                            StudentController.showAll();
                                             break;
 
                                         case 2:
-                                            CoderController.filter();
+                                            StudentController.filter();
                                             break;
                                     }
                                 } while (optionSearch != 3);
                                 break;
 
                             case 3:
-                                CoderController.delete();
+                                StudentController.delete();
                                 break;
 
                             case 4:
-                                CoderController.update();
+                                StudentController.update();
                                 break;
                         }
                     } while (optionCRUD != 5);
@@ -73,10 +77,10 @@ public class Main {
                 case 2:
                     do {
                         optionCRUD = Integer.parseInt(JOptionPane.showInputDialog("""
-                        1. Create Company
-                        2. Search Company
-                        3. Delete Company
-                        4. Update Company
+                        1. Create Course
+                        2. Search Course
+                        3. Delete Course
+                        4. Update Course
                         5. Exit
                         
                         Enter your option:
@@ -84,15 +88,15 @@ public class Main {
 
                         switch (optionCRUD) {
                             case 1:
-                                CompanyController.create();
+                                CourseController.create();
                                 break;
 
                             case 2:
 
                                 do {
                                     optionSearch = Integer.parseInt(JOptionPane.showInputDialog("""
-                                    1. Show All Company
-                                    2. Filter Company
+                                    1. Show All Course
+                                    2. Filter Course
                                     3. Exit
                                     
                                     Enter your option:
@@ -100,22 +104,22 @@ public class Main {
 
                                     switch (optionSearch) {
                                         case 1:
-                                            CompanyController.showAll();
+                                            CourseController.showAll();
                                             break;
 
                                         case 2:
-                                            CompanyController.filter();
+                                            CourseController.filter();
                                             break;
                                     }
                                 } while (optionSearch != 3);
                                 break;
 
                             case 3:
-                                CompanyController.delete();
+                                CourseController.delete();
                                 break;
 
                             case 4:
-                                CompanyController.update();
+                                CourseController.update();
                                 break;
                         }
                     } while (optionCRUD != 5);
@@ -123,10 +127,10 @@ public class Main {
                 case 3:
                     do {
                         optionCRUD = Integer.parseInt(JOptionPane.showInputDialog("""
-                        1. Create Vacancy
-                        2. Search Vacancy
-                        3. Delete Vacancy
-                        4. Update Vacancy
+                        1. Create Inscription
+                        2. Search Inscription
+                        3. Delete Inscription
+                        4. Update Inscription
                         5. Exit
                         
                         Enter your option:
@@ -134,15 +138,15 @@ public class Main {
 
                         switch (optionCRUD) {
                             case 1:
-                                VacancyController.create();
+                                InscriptionController.create();
                                 break;
 
                             case 2:
 
                                 do {
                                     optionSearch = Integer.parseInt(JOptionPane.showInputDialog("""
-                                    1. Show All Vacancy
-                                    2. Filter Vacancy
+                                    1. Show All Inscription
+                                    2. Filter Inscription
                                     3. Exit
                                     
                                     Enter your option:
@@ -150,22 +154,22 @@ public class Main {
 
                                     switch (optionSearch) {
                                         case 1:
-                                            VacancyController.showAll();
+                                            InscriptionController.showAll();
                                             break;
 
                                         case 2:
-                                            VacancyController.filter();
+                                            InscriptionController.filter();
                                             break;
                                     }
                                 } while (optionSearch != 3);
                                 break;
 
                             case 3:
-                                VacancyController.delete();
+                                InscriptionController.delete();
                                 break;
 
                             case 4:
-                                VacancyController.update();
+                                InscriptionController.update();
                                 break;
                         }
                     } while (optionCRUD != 5);
@@ -173,10 +177,10 @@ public class Main {
                 case 4:
                     do {
                         optionCRUD = Integer.parseInt(JOptionPane.showInputDialog("""
-                        1. Create Contract
-                        2. Search Contract
-                        3. Delete Contract
-                        4. Update Contract
+                        1. Create Score
+                        2. Search Score
+                        3. Delete Score
+                        4. Update Score
                         5. Exit
                         
                         Enter your option:
@@ -184,15 +188,15 @@ public class Main {
 
                         switch (optionCRUD) {
                             case 1:
-                                ContractController.create();
+                                ScoreController.create();
                                 break;
 
                             case 2:
 
                                 do {
                                     optionSearch = Integer.parseInt(JOptionPane.showInputDialog("""
-                                    1. Show All Contract
-                                    2. Filter Contract
+                                    1. Show All Score
+                                    2. Filter Score
                                     3. Exit
                                     
                                     Enter your option:
@@ -200,22 +204,22 @@ public class Main {
 
                                     switch (optionSearch) {
                                         case 1:
-                                            ContractController.showAll();
+                                            ScoreController.showAll();
                                             break;
 
                                         case 2:
-                                            ContractController.filter();
+                                            ScoreController.filter();
                                             break;
                                     }
                                 } while (optionSearch != 3);
                                 break;
 
                             case 3:
-                                ContractController.delete();
+                                ScoreController.delete();
                                 break;
 
                             case 4:
-                                ContractController.update();
+                                ScoreController.update();
                                 break;
                         }
                     } while (optionCRUD != 5);

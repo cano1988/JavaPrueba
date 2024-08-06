@@ -45,7 +45,7 @@ public class Student {
         this.email = email;
     }
 
-    public boolean getStatu() {
+    public String getStatu() {
         return statu;
     }
 

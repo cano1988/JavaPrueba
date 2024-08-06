@@ -5,12 +5,11 @@ import com.riwiJava.persistence.ConfigDB.MysqlConfig;
 import com.riwiJava.repository.StudentCrudRepository;
 
 import javax.swing.*;
-import javax.swing.text.html.parser.Entity;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentModel implements StudentCrudRepository {
+public class CourseModel implements StudentCrudRepository {
 
 
     @Override
